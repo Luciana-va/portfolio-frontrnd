@@ -1,0 +1,22 @@
+*{
+    height: 100vh;
+}
+
+header{
+  
+    background-color: rgba(13, 86, 13, 0.607);
+    height: 50px;
+    width: 100%;
+
+}
+
+main{
+    height: calc(100vh - 100px);
+}
+
+footer {
+    background-color: rgba(13, 86, 13, 0.607);
+    height: 50px;
+    width: 100%;
+
+}

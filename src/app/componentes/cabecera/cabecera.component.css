@@ -1,0 +1,19 @@
+header{ 
+    display: flex;
+    
+} 
+
+#logoINTI img {
+   width:35%;
+    margin: 3px;
+}
+
+
+#logoRedes img{      
+    margin: 4px;
+    width: 4%;    
+}
+
+#logoRedes{
+    text-align: right;
+}

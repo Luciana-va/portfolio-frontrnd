@@ -1,1 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    height: 100vh;
+    background: url(imagenes\mosaic-g253ea8d14_1280.jpg);
+    background-size: 100%;
+}
