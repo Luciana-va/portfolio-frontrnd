@@ -1,0 +1,36 @@
+#contenedor{
+    background: url(imagenes\banner.png);
+    background-size: 120%;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    
+    
+    
+}
+
+#acerca{
+    height: 80%;
+    width: 70%;
+
+    display: flex;
+    
+
+
+    padding: 50px;
+    
+    
+}
+
+img {
+    height: 70%;
+    margin: 10px;
+    border: 2px solid black;
+    border-radius: 50%;
+}
+
+#acerca p{
+    font-size: 27px;
+    font-weight: bolder;
+    text-align:justify;
+}
