@@ -7,6 +7,7 @@ import { CabeceraComponent } from './componentes/cabecera/cabecera.component';
 import { PieComponent } from './componentes/pie/pie.component';
 import { PrincipalComponent } from './componentes/principal/principal.component';
 import { AcercadeComponent } from './componentes/acercade/acercade.component';
+import { ExperienciaComponent } from './componentes/experiencia/experiencia.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { AcercadeComponent } from './componentes/acercade/acercade.component';
     CabeceraComponent,
     PieComponent,
     PrincipalComponent,
-    AcercadeComponent
+    AcercadeComponent,
+    ExperienciaComponent
   ],
   imports: [
     BrowserModule,
