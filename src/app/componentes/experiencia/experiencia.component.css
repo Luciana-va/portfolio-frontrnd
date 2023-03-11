@@ -6,8 +6,8 @@ img{
     padding: 10px;
         
     font-size: large;
+    font-weight: bold;
    
-    color: white;
 }
 
 #cont{
@@ -28,7 +28,6 @@ img{
 }
 
 h1{
-    color: white;
     font-weight: bolder;
     text-align: left;
     margin-bottom: 50px;
