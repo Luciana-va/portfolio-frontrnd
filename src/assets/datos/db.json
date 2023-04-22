@@ -1,0 +1,87 @@
+{
+        
+"acerca":"Soy técnica en conservación de Obras de Arte. Realizo trabajos de conservación y restauración en distintas instituciones y en paráctica privada sobre distintos materiales y especializándome en textiles. Actualmente me encuentro capacitandome en otra area, la programación, a través de la plataforma de Argentina Programa, esperando obtener el título de Full Stack Developer Jr. El portfolio que están viendo es el trabajo final de dicho estudio.",
+"nombre":"Luciana Y. Vallejos",
+"img":"assets/imagenes/imagen perfil.png",
+"banner":"assets/imagenes/banner.png",
+
+
+"experiencia":[
+{
+"institucion":"",
+"desscripcion":"",
+"periodo":"",
+"img":""
+},
+{
+"institucion":"",
+"desscripcion":"",
+"periodo":"",
+"img":""
+}
+],
+
+
+"educacion":[
+{
+"institucion":"UMSA",
+"titulo":"Licenciatura en Conservación y Restauración de Bienes Culturales. Cursada completa. Falta trabajo final.",
+"periodo":"2011-2014 ",
+"imag":"assets/imagenes/logoumsa.png",
+"alt":"Logo de la UMSA"
+},
+{
+"institucion":"UMSA",
+"titulo":"Técnico en Conservación de Obras de Arte",
+"periodo":"2011-2014 ",
+"imag":"assets/imagenes/logoumsa.png",
+"alt":"Logo de la UMSA"
+    },
+
+
+{
+"institucion":"UBA - Facultad de Filosofía y Letras",
+"titulo":" Diplomatura en Investigación y Conservación Fotográfica Documental con especialización en Conservación",
+"periodo":"Agosto 2016-Julio 2017",
+"imag":"assets/imagenes/logo UBA.jpg",
+"alt":"Logo de la UBA"
+}
+],
+
+"skills":[
+{
+"habilidad":"HTML",
+"img":"assets/imagenes/logoHTML.png",
+"alt":"Logo de HTML",
+"porcentaje": 40
+},
+{
+"habilidad":"HTML",
+"img":"assets/imagenes/logoHTML.png",
+"alt":"Logo de HTML",
+"porcentaje": 60
+},
+{
+"habilidad":"HTML",
+"img":"assets/imagenes/logoHTML.png",
+"alt":"Logo de HTML",
+"porcentaje": 10
+}
+
+],
+
+"proyectos":[
+{
+"imag":"",
+"titulo":"",
+"descripcion":"",
+"link":""
+},
+{
+"imag":"",
+"titulo":"",
+"descripcion":"",
+"link":""
+}
+]
+}

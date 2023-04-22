@@ -1,19 +1,35 @@
 <div id="contenedor">
-   <div id="banner">
-      <!-- Aquí va el banner -->
+   <div id="banner" >
+      <!--style.background-image="url('{{miPortfolio.banner}}')"
+          Aquí va el banner, traigo el background-image del css y lo coloco con style dentro de la etiqueta div-->
+     
+      
    </div>
 
 
 
    <div id="acerca"> 
 
-      <img id="foto" src="assets\imagenes\imagen perfil.png" alt="Imagen de perfil">
+      <div>
+        <img id="foto" [src]="" alt="Imagen de perfil"> 
+        <!-- miPortfolio.img
+         acá se realizó un property binding -->
+
+        <h2>Aca Va El Nombre</h2> <!-- acá se realizó un data binding -->
+      </div>
 
       <div id="textoAcerca">
          <h1>ACERCA DE</h1>
-         <p>Mi nombre es Luciana Vallejos, soy técnica en conservación de Obras de Arte. Realizo trabajos de conservación y restauración en distintas instituciones y en paráctica privada sobre distintos materiales y especializándome en textiles.</p>
-         <p>Actualmente me encuentro capacitandome en otra area, la programación, a través de la plataforma de Argentina Programa, esperando obtener el título de Full Stack Developer Jr. El portfolio que están viendo es el trabajo final de dicho estudio.</p>
-        
-         </div>
+         <p>
+          Aca Va El acerca <!-- acá se realizó un data binding -->
+         </p>
+
+         <button 
+         (click)="showLog()"
+         *ngIf="logIn"
+         >log</button>
+       
+      </div>
+         
    </div>
 </div>

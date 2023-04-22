@@ -1,0 +1,27 @@
+<p>
+    <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample"
+    >
+    {{text}}
+      </a>
+  </p>
+  <div class="collapse" id="collapseExample">
+    <div class="card card-body">
+        <form>
+            <div class="input">
+                <label>Usuario</label>
+                <input type="text" name="usuario" [(ngModel)]="usuario">
+            </div>
+            <div class="input">
+                <label>Contraseña</label>
+                <input type="password" name="contrasena" [(ngModel)]="contrasena">
+            </div>
+            <div class="input">
+                <input type="submit" value="LogIn" (click)="LogIn()" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+            </div>
+        </form>
+
+
+    </div>
+  </div>
+
+  <button (click)="LogOut()">LOGOUT</button>

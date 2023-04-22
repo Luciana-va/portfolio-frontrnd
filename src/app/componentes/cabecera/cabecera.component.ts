@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./cabecera.component.css']
 })
 export class CabeceraComponent {
+  usuario:any;
+  contrasena:any;
+  
+
 
 }
