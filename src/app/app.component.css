@@ -13,7 +13,8 @@ header{
 footer {
     background-color: rgba(13, 86, 13, 0.607);
     height: 8vh;
-    width: 100%;
+    width: 100vw;
     align-self: flex-end;
 
 }
+

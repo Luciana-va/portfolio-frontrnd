@@ -1,5 +1,5 @@
 <p>
-    <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample"
+    <a *ngIf="!logIn" class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample"
     >
     {{text}}
       </a>
@@ -24,4 +24,6 @@
     </div>
   </div>
 
-  <button (click)="LogOut()">LOGOUT</button>
+  
+
+  <button class="btn btn-primary" (click)="LogOut()" *ngIf="logIn">LOGOUT</button>

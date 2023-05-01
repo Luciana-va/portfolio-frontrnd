@@ -1,4 +1,4 @@
-<div id="contenedor">
+<div id="contenedor"></div>
    <div id="banner" >
       <!--style.background-image="url('{{miPortfolio.banner}}')"
           Aquí va el banner, traigo el background-image del css y lo coloco con style dentro de la etiqueta div-->
@@ -6,30 +6,34 @@
       
    </div>
 
+   <div class="container text-center">
+      <div class="row align-items-start">
+        <div class="col">
+          
+           <div>
+             <img id="foto" [src]="" alt="Imagen de perfil"> 
+               <!-- miPortfolio.img acá se realizó un property binding -->
 
+             <h2>Aca Va El Nombre</h2> <!-- acá se realizó un data binding -->
+            </div>s
+        </div>
 
-   <div id="acerca"> 
-
-      <div>
-        <img id="foto" [src]="" alt="Imagen de perfil"> 
-        <!-- miPortfolio.img
-         acá se realizó un property binding -->
-
-        <h2>Aca Va El Nombre</h2> <!-- acá se realizó un data binding -->
-      </div>
-
-      <div id="textoAcerca">
-         <h1>ACERCA DE</h1>
-         <p>
-          Aca Va El acerca <!-- acá se realizó un data binding -->
-         </p>
-
-         <button 
-         (click)="showLog()"
-         *ngIf="logIn"
-         >log</button>
-       
-      </div>
+        <div class="col-sm-9 p-3" id="textoAcerca">
+         
+            <h1>ACERCA DE</h1>
+            <p>
+               lalala
+            <!-- acá se realizó un data binding -->
+            </p>
+   
+            <button 
+            (click)="showLog()"
+            *ngIf="logIn"
+            >log</button>
+          
+         
+        </div>
+    
          
    </div>
 </div>

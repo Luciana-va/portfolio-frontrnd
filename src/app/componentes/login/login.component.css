@@ -1,6 +1,4 @@
-.btn-primary{
-    margin-top: 10px;
-}
+
 
 .card-body{
     background-color: yellowgreen;
@@ -9,4 +7,13 @@
 
 input{
     color: black;
+}
+
+button{
+  margin-top: -8%;
+    
+}
+
+.btn-primary{
+    margin-top: 8%;
 }

@@ -1,27 +1,20 @@
 #contenedor{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     
 }
 
 #banner{
    height: 50vh;
-   width: 90%;
-   
+   width: 90vw;
+   margin-left: 5vw;
+   margin-right: 5vw;
+
    background-size: cover;
    background-color: #7910414a;
    margin-bottom: 30px;
 
-}
-
-
-#acerca{
-    display: flex; 
-    width: 65%;
-    margin: 20px;
-
-    
 }
 
 
@@ -59,3 +52,13 @@ h2{
     margin-top: 50px;
 }
 
+@media (max-width: 600px){
+    .container{
+        width: 90vw;
+        margin: 0px;
+    }
+
+    #foto{
+        margin: 1px;
+    }
+}
