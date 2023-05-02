@@ -19,3 +19,7 @@ header{
 #logoRedes{
     text-align: right;
 }
+
+button{
+    border-radius: 50%
+}

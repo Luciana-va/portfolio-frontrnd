@@ -1,0 +1,50 @@
+
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    Launch demo modal
+  </button>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">MODIFICAR REDES SOCIALES</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            
+          <form [formGroup]="redesSocialesForm" (ngSubmit)="onSubmit(redesSocialesForm.value)">
+
+            <div class="elementoForm">
+            <label for="facebook">FACEBOOK: </label>
+            <input id="facebook" type="text" formControlName="facebook"></div>
+          
+            <div class="elementoForm">
+            <label for="instagram">INSTAGRAM: </label>
+            <input id="instagram" type="text" formControlName="instagram"></div>
+
+            <div class="elementoForm">
+            <label for="linkedin">LINKEDIN: </label>
+            <input id="linkedin" type="text" formControlName="linkedin"></div>
+
+            <!-- El atributo disasbled me permite deshabilitara el boton de enviar si no se cumplen las condiciones de las validaciones -->
+            <button type="submit" class="btn btn-primary" [disabled]="!redesSocialesForm.valid">ENVIAR</button> 
+          
+          </form>
+         
+          <input type="text" name="destinatario" placeholder="Texto por defecto">
+
+          <input type="text" name="destinatario" value="Valor por defecto">
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">CERRAR</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+    

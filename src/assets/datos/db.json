@@ -24,6 +24,7 @@
 
 "educacion":[
 {
+"id": 1,
 "institucion":"UMSA",
 "titulo":"Licenciatura en Conservación y Restauración de Bienes Culturales. Cursada completa. Falta trabajo final.",
 "periodo":"2011-2014 ",
@@ -31,6 +32,7 @@
 "alt":"Logo de la UMSA"
 },
 {
+"id": 2,
 "institucion":"UMSA",
 "titulo":"Técnico en Conservación de Obras de Arte",
 "periodo":"2011-2014 ",
@@ -40,6 +42,7 @@
 
 
 {
+"id":3,
 "institucion":"UBA - Facultad de Filosofía y Letras",
 "titulo":" Diplomatura en Investigación y Conservación Fotográfica Documental con especialización en Conservación",
 "periodo":"Agosto 2016-Julio 2017",

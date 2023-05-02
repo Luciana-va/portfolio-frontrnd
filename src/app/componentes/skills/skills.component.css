@@ -2,14 +2,22 @@ img{
     width: 10vh;
 }
 
-.row{
-    width: 80%;
+.container {
+    padding: 20px;
+    border-radius: 30px;
     background: rgb(235,44,83);
     background: linear-gradient(90deg, rgba(235,44,83,0.3839805453431373) 0%, rgba(218,212,68,0.38117942489495793) 59%, rgba(46,162,36,0.3895827862394958) 100%);
     width: 80vw;
-    margin-left: 90px;
+    margin-left: 7vw;
     margin-top: 150px;
+    
 }
+
+h1{
+    width: 100%;
+    font-weight: bolder;
+}
+
 
 .card{
 

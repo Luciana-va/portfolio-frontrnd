@@ -14,13 +14,54 @@
       </div>
       
       <div class="col">
-       {{educacion.titulo}}
+       {{educacion.titulo}}  
+
+       
+
+
+
       </div>
 
       <div class="col">
         {{educacion.periodo}}
         <br>
         {{educacion.institucion}}
+        {{educacion.id}}
+
+
+
+        <!-- Button trigger modal      con attribute binding para que abran distintos modales según corresponda, ya que si no el data-bs-target del boton (donde es necesario un string luego del asterisco) y el id del modal, los distintos botones abririan el mismo modal.-->
+<button type="button{{educacion.id}}" class="btn btn-primary" data-bs-toggle="modal" [attr.data-bs-target]="'#edu'+educacion.id">
+  Launch demo modal
+</button>
+
+<!-- Modal -->
+<div class="modal fade" [attr.id]="'edu'+educacion.id" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        
+        
+        {{educacion.periodo}}
+        <br>
+        {{educacion.institucion}}
+        {{educacion.id}}
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
       </div>
       
     

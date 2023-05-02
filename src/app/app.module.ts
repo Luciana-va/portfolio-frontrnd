@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import {HttpClientModule} from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -13,6 +14,8 @@ import { ExperienciaComponent } from './componentes/experiencia/experiencia.comp
 import { EducacionComponent } from './componentes/educacion/educacion.component';
 import { SkillsComponent } from './componentes/skills/skills.component';
 import { LoginComponent } from './componentes/login/login.component';
+import { ProyectosComponent } from './componentes/proyectos/proyectos.component';
+import { ModificarComponent } from './componentes/modificar/modificar.component';
 
 @NgModule({
   declarations: [
@@ -24,13 +27,16 @@ import { LoginComponent } from './componentes/login/login.component';
     ExperienciaComponent,
     EducacionComponent,
     SkillsComponent,
-    LoginComponent
+    LoginComponent,
+    ProyectosComponent,
+    ModificarComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+    ReactiveFormsModule ,
   ],
   providers: [],
   bootstrap: [AppComponent]
