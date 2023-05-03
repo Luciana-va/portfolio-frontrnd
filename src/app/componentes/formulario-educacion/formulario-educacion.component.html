@@ -1,0 +1,64 @@
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" [attr.data-bs-target]="'#form'+valorId+nombre">
+    Launch demo modal
+  </button>
+  
+  <!-- Modal -->
+  <div class="modal fade" [attr.id]="'form'+valorId+nombre" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+
+      <div class="modal-content">
+
+            <div class="modal-header">
+             <h2 class="modal-title fs-5" id="exampleModalLabel">Modal title</h2>
+             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+       
+       
+           <div class="modal-body">
+
+            <form [formGroup]="educYexpForm" (ngSubmit)="onSubmit(educYexpForm.value)">
+
+
+                <div>
+                <label for="descripcion">DESCRIPCION </label>
+                <textarea cols="30" rows="5" formControlName="descripcion"
+                value="valorDescripcion"></textarea></div>
+
+                <div>
+                <label for="inicio">FECHA DE INICIO </label>
+                <input id="inicio" type="date" formControlName="inicio">
+                <label for="final">FECHA DE FINALIZACION </label>
+                <input id="final" type="date" formControlName="final" placeholder="Si Corresponde"></div>
+    
+                <div>
+                  <label for="institucion"> INSTITUCION </label>
+                  <input id="institucion" type="text" formControlName="institucion"></div>
+                
+                <div>
+                <label for="linkImagen">LOGO (LINK) </label>
+                <input id="linkImagen" type="text" formControlName="linkImagen"></div>
+
+                <div>
+                <label for="alternativo">TEXTO ALTERNATIVO</label>
+                <input type="text" id="alternativo"  formControlName="alternativo" ></div>   
+
+                <input type="text" name="destinatario" placeholder="Texto por defecto">
+
+                <input type="text" name="destinatario" value="Valor por defecto">
+                
+                <!-- El atributo disasbled me permite deshabilitara el boton de enviar si no se cumplen las condiciones de las validaciones -->
+                <button type="submit" class="btn btn-primary" [disabled]="!educYexpForm.valid">ENVIAR</button> 
+              
+             </form>
+              
+          
+             </div>
+
+           <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+      </div>
+    </div>
+  </div>
