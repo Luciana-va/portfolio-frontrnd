@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { PortfolioService } from 'src/app/servicios/portfolio.service';
+import { Educacion } from 'src/app/modelos/educacionModelo';
+import { EducacionService } from 'src/app/servicios/educacion.service';
+
 
 @Component({
   selector: 'app-educacion',
@@ -7,15 +9,35 @@ import { PortfolioService } from 'src/app/servicios/portfolio.service';
   styleUrls: ['./educacion.component.css']
 })
 export class EducacionComponent implements OnInit  {
-  listaEducacion:any;
   
-  constructor(private datosPortfolio:PortfolioService){}
+  educacion: Educacion[]=[];
 
-  ngOnInit():void{
-    this.datosPortfolio.obtenerDatos().subscribe
-    (datos=>{
-    this.listaEducacion=datos.educacion;  
-    });
+  constructor(private datosEducacion:EducacionService ){}
+    
+  
+  
+
+
+  ngOnInit(){
+    
+    this.datosEducacion.getEducacion().subscribe(data =>{this.educacion = data});
+    
+    
+    
     
   }
+
+   //Esta funcion es para eliminar un elemnto de la lista de educacion.
+  eliminarEducacion(id:any) {
+    this.datosEducacion.eliminarEducacion(id).subscribe(resp=>{
+     
+    })
+    location. reload();
+
+  }
+
+otrafuncion(){
+  console.log("se apretó el boton desde educacion");
+}
+  
 }

@@ -1,0 +1,17 @@
+*{
+    color: black;
+}
+
+.btn-primary{
+
+    background-color: greenyellow;
+    border-radius: 50%;
+    background-image: i class="bi bi-brush";
+
+}
+
+.bi-brush{
+    width: 1000px;
+    height: 1000px;
+    color: black;
+}

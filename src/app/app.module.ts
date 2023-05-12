@@ -17,6 +17,11 @@ import { LoginComponent } from './componentes/login/login.component';
 import { ProyectosComponent } from './componentes/proyectos/proyectos.component';
 import { ModificarComponent } from './componentes/modificar/modificar.component';
 import { FormularioEducacionComponent } from './componentes/formulario-educacion/formulario-educacion.component';
+import { FormularioAcercadeComponent } from './componentes/formulario-acercade/formulario-acercade.component';
+import { EducacionService } from './servicios/educacion.service';
+import { DatosPersonalesService } from './servicios/datos-personales.service';
+import { LogService } from './servicios/log.service';
+import { RedesSocialesService } from './servicios/redes-sociales.service';
 
 @NgModule({
   declarations: [
@@ -31,7 +36,8 @@ import { FormularioEducacionComponent } from './componentes/formulario-educacion
     LoginComponent,
     ProyectosComponent,
     ModificarComponent,
-    FormularioEducacionComponent
+    FormularioEducacionComponent,
+    FormularioAcercadeComponent
   ],
   imports: [
     BrowserModule,
@@ -40,7 +46,14 @@ import { FormularioEducacionComponent } from './componentes/formulario-educacion
     FormsModule,
     ReactiveFormsModule ,
   ],
-  providers: [],
+  // En providers coloco los servicios que creo e importo
+  providers: [
+    EducacionService,
+    DatosPersonalesService,
+    LogService,
+    RedesSocialesService,
+     
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

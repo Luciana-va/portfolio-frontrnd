@@ -1,9 +1,11 @@
 {
-        
+  "datosPersonales":{   
+    
 "acerca":"Soy técnica en conservación de Obras de Arte. Realizo trabajos de conservación y restauración en distintas instituciones y en paráctica privada sobre distintos materiales y especializándome en textiles. Actualmente me encuentro capacitandome en otra area, la programación, a través de la plataforma de Argentina Programa, esperando obtener el título de Full Stack Developer Jr. El portfolio que están viendo es el trabajo final de dicho estudio.",
 "nombre":"Luciana Y. Vallejos",
 "img":"assets/imagenes/imagen perfil.png",
-"banner":"assets/imagenes/banner.png",
+"banner":"assets/imagenes/banner.png"
+  },
 
 
 "experiencia":[

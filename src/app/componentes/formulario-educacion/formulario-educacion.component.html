@@ -10,45 +10,54 @@
       <div class="modal-content">
 
             <div class="modal-header">
-             <h2 class="modal-title fs-5" id="exampleModalLabel">Modal title</h2>
+             <h2 class="modal-title fs-5" id="exampleModalLabel">{{nombreModal}}</h2>
              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
        
        
            <div class="modal-body">
 
-            <form [formGroup]="educYexpForm" (ngSubmit)="onSubmit(educYexpForm.value)">
+            <form [formGroup]="educYexpForm">
 
 
                 <div>
                 <label for="descripcion">DESCRIPCION </label>
-                <textarea cols="30" rows="5" formControlName="descripcion"
-                value="valorDescripcion"></textarea></div>
+                <input type= "text" formControlName="descripcion"></div>
 
                 <div>
-                <label for="inicio">FECHA DE INICIO </label>
-                <input id="inicio" type="date" formControlName="inicio">
-                <label for="final">FECHA DE FINALIZACION </label>
-                <input id="final" type="date" formControlName="final" placeholder="Si Corresponde"></div>
+                <label for="fechaInicio">FECHA DE INICIO </label>
+                <input id="fechaInicio" type="date" formControlName="fechaInicio">
+                <label for="fechaFinalizacion">FECHA DE FINALIZACION </label>
+                <input id="fechaFinalizacion" type="date" formControlName="fechaFinalizacion" placeholder="Si Corresponde"></div>
     
                 <div>
                   <label for="institucion"> INSTITUCION </label>
                   <input id="institucion" type="text" formControlName="institucion"></div>
                 
                 <div>
-                <label for="linkImagen">LOGO (LINK) </label>
-                <input id="linkImagen" type="text" formControlName="linkImagen"></div>
+                <label for="linkLogo">LOGO (LINK) </label>
+                <input id="linkLogo" type="text" formControlName="linkLogo"></div>
 
                 <div>
-                <label for="alternativo">TEXTO ALTERNATIVO</label>
-                <input type="text" id="alternativo"  formControlName="alternativo" ></div>   
+                <label for="textoAlternativo">TEXTO ALTERNATIVO</label>
+                <input type="text" id="textoAlternativo"  formControlName="textoAlternativo" ></div>   
 
                 <input type="text" name="destinatario" placeholder="Texto por defecto">
 
                 <input type="text" name="destinatario" value="Valor por defecto">
                 
                 <!-- El atributo disasbled me permite deshabilitara el boton de enviar si no se cumplen las condiciones de las validaciones -->
-                <button type="submit" class="btn btn-primary" [disabled]="!educYexpForm.valid">ENVIAR</button> 
+                <button *ngIf="nombre==='edu'&& valorId!=''"
+                type="submit" class="btn btn-primary" (click)="modificarEducacion(valorId)" [disabled]="!educYexpForm.valid">GUARDAR MODIFICACION</button>
+
+                <button *ngIf="nombre==='edu'&& valorId ===''"
+                type="submit" class="btn btn-primary" (click)="crearEducacion()" [disabled]="!educYexpForm.valid" data-bs-dismiss="modal">CREAR</button>
+                
+                <button *ngIf="nombre==='exp' && valorId!=''"
+                type="submit" class="btn btn-primary" (click)="oprimirbtnguardar()" [disabled]="!educYexpForm.valid">GUARDAR MODIFICACION</button>
+                
+                <button *ngIf="nombre==='exp'&& valorId ===''"
+                type="submit" class="btn btn-primary" (click)="oprimirbtnguardar()" [disabled]="!educYexpForm.valid">CREAR</button>
               
              </form>
               
@@ -58,6 +67,7 @@
            <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
               <button type="button" class="btn btn-primary">Save changes</button>
+              <button type="button" (click)="opretarBtn($event)">Prueba</button>
             </div>
       </div>
     </div>

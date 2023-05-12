@@ -1,8 +1,13 @@
 <div id="contenedor"></div>
-   <div id="banner" >
+   <div id="banner" style.background-image="url('{{datosPersonales[0].linkBanner}}')">
       <!--style.background-image="url('{{miPortfolio.banner}}')"
           Aquí va el banner, traigo el background-image del css y lo coloco con style dentro de la etiqueta div-->
-     
+          <app-formulario-acercade
+            valorImgBanner="{{datosPersonales[0].linkBanner}}"
+            valorName="{{datosPersonales[0].nombre}}"
+            valorFotoPerfil="{{datosPersonales[0].linkFoto}}"
+            valorAcerca="{{datosPersonales[0].acerca}}">
+          </app-formulario-acercade>
       
    </div>
 
@@ -11,18 +16,18 @@
         <div class="col">
           
            <div>
-             <img id="foto" [src]="" alt="Imagen de perfil"> 
+             <img id="foto" [src]=datosPersonales[0].linkFoto alt="Foto de Perfil"> 
                <!-- miPortfolio.img acá se realizó un property binding -->
 
-             <h2>Aca Va El Nombre</h2> <!-- acá se realizó un data binding -->
-            </div>s
+             <h2>{{datosPersonales[0].nombre}}</h2> <!-- acá se realizó un data binding -->
+            </div>
         </div>
 
         <div class="col-sm-9 p-3" id="textoAcerca">
          
             <h1>ACERCA DE</h1>
             <p>
-               lalala
+               {{datosPersonales[0].acerca}}
             <!-- acá se realizó un data binding -->
             </p>
    

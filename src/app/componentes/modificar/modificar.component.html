@@ -14,28 +14,26 @@
         </div>
         <div class="modal-body">
             
-          <form [formGroup]="redesSocialesForm" (ngSubmit)="onSubmit(redesSocialesForm.value)">
+          <form [formGroup]="redesSocialesForm" >
 
             <div class="elementoForm">
-            <label for="facebook">FACEBOOK: </label>
-            <input id="facebook" type="text" formControlName="facebook"></div>
+            <label for="linkFacebook">FACEBOOK: </label>
+            <input id="linkFacebook" type="text" formControlName="linkFacebook"></div>
           
             <div class="elementoForm">
-            <label for="instagram">INSTAGRAM: </label>
-            <input id="instagram" type="text" formControlName="instagram"></div>
+            <label for="linkInstagram">INSTAGRAM: </label>
+            <input id="linkInstagram" type="text" formControlName="linkInstagram"></div>
 
             <div class="elementoForm">
-            <label for="linkedin">LINKEDIN: </label>
-            <input id="linkedin" type="text" formControlName="linkedin"></div>
+            <label for="linkelin">LINKEDIN: </label>
+            <input id="linkLinkelin" type="text" formControlName="linkLinkelin"></div>
 
             <!-- El atributo disasbled me permite deshabilitara el boton de enviar si no se cumplen las condiciones de las validaciones -->
-            <button type="submit" class="btn btn-primary" [disabled]="!redesSocialesForm.valid">ENVIAR</button> 
+            <button  class="btn btn-primary" data-bs-dismiss="modal" (click)="modificarRedes(0)">ENVIAR</button> 
           
           </form>
          
-          <input type="text" name="destinatario" placeholder="Texto por defecto">
 
-          <input type="text" name="destinatario" value="Valor por defecto">
 
         </div>
         <div class="modal-footer">

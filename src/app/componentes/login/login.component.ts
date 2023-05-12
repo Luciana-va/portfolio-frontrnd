@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormGroup, FormControl, Validators, FormsModule } from '@angular/forms';
-import { PortfolioService } from 'src/app/servicios/portfolio.service';
+import { LogService } from 'src/app/servicios/log.service';
+
 
 
 @Component({
@@ -10,7 +11,7 @@ import { PortfolioService } from 'src/app/servicios/portfolio.service';
 })
 export class LoginComponent {
 
-  constructor(private datosPortfolio:PortfolioService){}
+  constructor(private LogInOut:LogService){}
 
   usuario: string ="";
   contrasena: string ="";
@@ -29,13 +30,13 @@ export class LoginComponent {
       this.logIn = false;
       console.log(this.logIn);
     }
-    this.datosPortfolio.log.emit(this.logIn);
+    this.LogInOut.log.emit(this.logIn);
   }
 
   LogOut(){
     this.logIn = false;
     console.log(this.logIn);
-    this.datosPortfolio.log.emit(this.logIn);
+    this.LogInOut.log.emit(this.logIn);
   }
 }
       

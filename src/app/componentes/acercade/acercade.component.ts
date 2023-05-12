@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { PortfolioService } from 'src/app/servicios/portfolio.service';
+import { LogService } from 'src/app/servicios/log.service';
+import { DatosPersonales } from 'src/app/modelos/datosPersonalesModelo';
+import { DatosPersonalesService } from 'src/app/servicios/datos-personales.service';
+
 
 @Component({
   selector: 'app-acercade',
@@ -7,20 +10,28 @@ import { PortfolioService } from 'src/app/servicios/portfolio.service';
   styleUrls: ['./acercade.component.css']
 })
 export class AcercadeComponent implements OnInit  {
-  listaDatosPersonales:any;
+  
   logIn:boolean = false;
 
-  constructor(private datosPortfolio:PortfolioService){}
+  datosPersonales:DatosPersonales[]=[];
+
+  constructor( private LogInOut:LogService,
+    private datosDatosPersonales:DatosPersonalesService
+    ){}
+
+
+    
 
   showLog(){
     console.log(this.logIn);
   }
 
   ngOnInit():void{
-    this.datosPortfolio.obtenerDatos().subscribe
-    (datos=>{this.listaDatosPersonales=datos.persona;  
-    });
-    this.datosPortfolio.log.subscribe
+    
+  this.datosDatosPersonales.getDatosPersonales().subscribe(data =>{this.datosPersonales = data});
+
+
+    this.LogInOut.log.subscribe
     (log=>{this.logIn=log});
   }
 

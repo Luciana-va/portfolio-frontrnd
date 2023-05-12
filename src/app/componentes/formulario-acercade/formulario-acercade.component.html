@@ -1,0 +1,57 @@
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal2">
+  <i class="bi bi-brush"></i>
+
+
+  </button>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title fs-5" id="exampleModalLabel">MODIFICAR DATOS PERSONALES</h2>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+            <div class="modal-body">
+
+
+
+                <form [formGroup]="acercadeForm">
+
+                    <div>
+                    <label for="linkBanner">LINK BANNER </label>
+                    <input id="linkBanner" type="text" formControlName="linkBanner"></div>
+
+                    <div>
+                    <label for="nombre">NOMBRE </label>
+                    <input id="nombre" type="text" formControlName="nombre"></div>
+                  
+                    <div>
+                    <label for="linkFoto">LINK FOTO PERFIL </label>
+                    <input id="linkFoto" type="text" formControlName="linkFoto"></div>
+        
+
+                    <div>
+                    <label for="acerca">ACERCA DE MI</label>
+                    <textarea cols="30" rows="5" formControlName="acerca"></textarea></div>
+        
+                    <!-- El atributo disasbled me permite deshabilitara el boton de enviar si no se cumplen las condiciones de las validaciones -->
+                    <button type="submit" class="btn btn-primary" (click)="modificarUsuario(0)" [disabled]="!acercadeForm.valid" data-bs-dismiss="modal">ENVIAR</button> 
+                  
+                  </form>
+
+
+
+
+
+
+
+
+
+          
+             </div>
+
+      </div>
+    </div>
+  </div>
