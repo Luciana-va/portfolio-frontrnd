@@ -16,6 +16,7 @@ export class FormularioEducacionComponent implements OnInit  {
   constructor(private datosEducacion:EducacionService ){}
   
   @Input() nombreModal:string= "";
+  @Input() nombreBoton:string= "";
   @Input() nombre:string= "";
   @Input() valorId:string= "";
   @Input() valorDescripcion:string="";
@@ -25,7 +26,7 @@ export class FormularioEducacionComponent implements OnInit  {
   @Input() valorLinkImagen:string= "";
   @Input() valorAlternativo:string= "";
   @Input() funcionDelboton:string= "";
-  @Output() onClick = new EventEmitter<Event>;
+  @Output() onClick = new EventEmitter();
 
 
   
@@ -42,19 +43,8 @@ export class FormularioEducacionComponent implements OnInit  {
        textoAlternativo: new FormControl(''),
     });
 
-    
-    
-    // onSubmit(value: any){
-    //   if(this.educYexpForm.valid){
-    //     alert('todo ok');
-    //   } else{
-    //     alert('error');
-    //   };
-    //   console.log(this.educYexpForm.value, this.valorId);
-    // };
-
-    //Esta funcion es para determinar los valores con los cuales se abre el formulario para modificar
-    ngOnInit() {
+//Esta funcion es para determinar los valores con los cuales se abre el formulario para modificar
+    valoresInicialesEduyExp(){
       this.educYexpForm.setValue({
         id: this.valorId,
         descripcion:this.valorDescripcion,
@@ -64,25 +54,32 @@ export class FormularioEducacionComponent implements OnInit  {
         linkLogo:this.valorLinkImagen,
         textoAlternativo: this.valorAlternativo,    
 
-      });
-  
+      });  
+
+    }
     
+    ngOnInit() {
+      this.valoresInicialesEduyExp();
     }
 
 
+    avisar(){
+      this.onClick.emit();
+    };
+
+
     //Esta funcion es para crear un nuevo item en educacion
-   crearEducacion():void{
-    this.datosEducacion.postEducacion(this.educYexpForm.value).subscribe(data =>{
-       this.educYexpForm.reset();
-      
-    });
+ crearEducacion():void{
+  this.datosEducacion.postEducacion(this.educYexpForm.value).subscribe(data =>{})
+  this.avisar();  
         
-  }
+ }
 
 
 
   modificarEducacion(id:any):void{
     this.datosEducacion.modificarEducacionId(id,this.educYexpForm.value).subscribe(data =>{
+      this.avisar();
       
     });
   }
@@ -104,7 +101,7 @@ export class FormularioEducacionComponent implements OnInit  {
 
 opretarBtn(event:Event):void{
   console.log("apretar btn desde el form");
-  this.onClick.emit();
+  
 }
   
 }

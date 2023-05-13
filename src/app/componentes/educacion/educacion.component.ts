@@ -13,31 +13,33 @@ export class EducacionComponent implements OnInit  {
   educacion: Educacion[]=[];
 
   constructor(private datosEducacion:EducacionService ){}
-    
-  
-  
+   
+  //esta funcion llama a base de daros
+  actualizar(){
+ 
+    this.datosEducacion.getEducacion().subscribe(data =>{this.educacion = data});
+  }; 
 
 
   ngOnInit(){
     
-    this.datosEducacion.getEducacion().subscribe(data =>{this.educacion = data});
-    
-    
-    
+    this.actualizar()  
+      
     
   }
+  
 
    //Esta funcion es para eliminar un elemnto de la lista de educacion.
   eliminarEducacion(id:any) {
     this.datosEducacion.eliminarEducacion(id).subscribe(resp=>{
+      console.log(resp);
+      this.actualizar();
      
-    })
-    location. reload();
+    });
+    
 
   }
 
-otrafuncion(){
-  console.log("se apretó el boton desde educacion");
-}
+
   
 }

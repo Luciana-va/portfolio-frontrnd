@@ -1,6 +1,7 @@
 <!-- Button trigger modal -->
+<button type="button" (click)="avisar()">Actualizar</button>
 <button type="button" class="btn btn-primary" data-bs-toggle="modal" [attr.data-bs-target]="'#form'+valorId+nombre">
-    Launch demo modal
+    {{nombreBoton}}
   </button>
   
   <!-- Modal -->
@@ -46,29 +47,30 @@
 
                 <input type="text" name="destinatario" value="Valor por defecto">
                 
-                <!-- El atributo disasbled me permite deshabilitara el boton de enviar si no se cumplen las condiciones de las validaciones -->
-                <button *ngIf="nombre==='edu'&& valorId!=''"
-                type="submit" class="btn btn-primary" (click)="modificarEducacion(valorId)" [disabled]="!educYexpForm.valid">GUARDAR MODIFICACION</button>
 
+                <!-- El atributo disasbled me permite deshabilitara el boton de enviar si no se cumplen las condiciones de las validaciones -->
+                <!-- Boton para confirmar la modificacion de educacion -->
+                <button *ngIf="nombre==='edu'&& valorId!=''"
+                type="submit" class="btn btn-primary" (click)="modificarEducacion(valorId)" [disabled]="!educYexpForm.valid" data-bs-dismiss="modal">GUARDAR MODIFICACION</button>
+
+                <button type="button" (click)="avisar()">boton</button>
+
+                <!-- Boton para confirmar la modificacion de educacion -->
                 <button *ngIf="nombre==='edu'&& valorId ===''"
                 type="submit" class="btn btn-primary" (click)="crearEducacion()" [disabled]="!educYexpForm.valid" data-bs-dismiss="modal">CREAR</button>
                 
+                <!-- Boton para confirmar la modificacion de experienci -->
                 <button *ngIf="nombre==='exp' && valorId!=''"
-                type="submit" class="btn btn-primary" (click)="oprimirbtnguardar()" [disabled]="!educYexpForm.valid">GUARDAR MODIFICACION</button>
-                
+                type="submit" class="btn btn-primary" (click)="oprimirbtnguardar()" [disabled]="!educYexpForm.valid" data-bs-dismiss="modal">GUARDAR MODIFICACION</button>
+               
+                <!-- Boton para confirmar la creacion de experienci -->
                 <button *ngIf="nombre==='exp'&& valorId ===''"
-                type="submit" class="btn btn-primary" (click)="oprimirbtnguardar()" [disabled]="!educYexpForm.valid">CREAR</button>
+                type="submit" class="btn btn-primary" (click)="oprimirbtnguardar()" [disabled]="!educYexpForm.valid" data-bs-dismiss="modal">CREAR</button>
               
              </form>
               
           
              </div>
-
-           <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary">Save changes</button>
-              <button type="button" (click)="opretarBtn($event)">Prueba</button>
-            </div>
       </div>
     </div>
   </div>

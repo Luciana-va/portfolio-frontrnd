@@ -6,6 +6,7 @@
     <app-formulario-educacion
               valorId=""
               nombreModal="CREAR EDUCACION"
+              nombreBoton="NUEVO"
               nombre="edu">
               
     </app-formulario-educacion>
@@ -21,12 +22,13 @@
            <app-formulario-educacion 
               valorId="{{educacion.id}}"
               nombreModal="MODIFICAR EDUCACION"
+              nombreBoton="MODIFICAR"
               nombre="edu"
               valorDescripcion="{{educacion.descripcion}}"
               valorInstitucion="{{educacion.institucion}}"
               valorLinkImagen="{{educacion.linkLogo }}"
               valorAlternativo="{{educacion.textoAlternativo}}"
-             (onClick)="otrafuncion()"
+             (onClick)="actualizar()"
               >
             </app-formulario-educacion>
             

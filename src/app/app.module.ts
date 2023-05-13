@@ -22,6 +22,7 @@ import { EducacionService } from './servicios/educacion.service';
 import { DatosPersonalesService } from './servicios/datos-personales.service';
 import { LogService } from './servicios/log.service';
 import { RedesSocialesService } from './servicios/redes-sociales.service';
+import { FormularioSkillsComponent } from './componentes/formulario-skills/formulario-skills.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { RedesSocialesService } from './servicios/redes-sociales.service';
     ProyectosComponent,
     ModificarComponent,
     FormularioEducacionComponent,
-    FormularioAcercadeComponent
+    FormularioAcercadeComponent,
+    FormularioSkillsComponent
   ],
   imports: [
     BrowserModule,
