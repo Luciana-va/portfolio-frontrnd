@@ -10,7 +10,8 @@ export class DatosPersonalesService {
 
   constructor(private http:HttpClient) { }
 
-  apiUrl = 'http://localhost:8080/api/datosPersonales';
+  // apiUrl = 'http://localhost:8080/api/datosPersonales';
+  apiUrl = 'https://portfolio-backend-ncwm.onrender.com/api/datosPersonales';
 
   datosPersonales: DatosPersonales[]=[];
 
