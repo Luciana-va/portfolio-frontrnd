@@ -1,9 +1,10 @@
 <!-- Button trigger modal -->
-<button type="button" (click)="avisar()">Actualizar</button>
+
 <button type="button" class="btn btn-primary" data-bs-toggle="modal" [attr.data-bs-target]="'#form'+valorId+nombre">
     {{nombreBoton}}
   </button>
-  
+
+
   <!-- Modal -->
   <div class="modal fade" [attr.id]="'form'+valorId+nombre" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">

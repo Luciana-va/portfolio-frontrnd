@@ -3,6 +3,7 @@
 <div class="container text-center">
 
     <h1> EDUCACIÓN <br> FORMAL</h1> 
+    <div>
     <app-formulario-educacion
               valorId=""
               nombreModal="CREAR EDUCACION"
@@ -10,6 +11,11 @@
               nombre="edu">
               
     </app-formulario-educacion>
+
+    <button type="button" (click)="actualizar()"class="btn btn-info">ACTUALIZAR</button>
+  
+  </div>
+
     
     <div class="row align-items-start" *ngFor="let educacion of educacion">
       <!-- Con el *ngFor recorro los objetos de una lista-->

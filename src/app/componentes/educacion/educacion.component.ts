@@ -14,7 +14,7 @@ export class EducacionComponent implements OnInit  {
 
   constructor(private datosEducacion:EducacionService ){}
    
-  //esta funcion llama a base de daros
+  //esta funcion llama a base de datos
   actualizar(){
  
     this.datosEducacion.getEducacion().subscribe(data =>{this.educacion = data});

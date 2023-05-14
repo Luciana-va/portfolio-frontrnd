@@ -29,3 +29,13 @@ h1{
 .progress{
     background-color: rgba(250, 235, 215, 0.473);
 }
+
+hr {
+    border: solid 5px black;
+
+    
+}
+
+#titulo{
+    width: 100%;
+}

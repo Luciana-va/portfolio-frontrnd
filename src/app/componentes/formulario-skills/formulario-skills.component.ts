@@ -16,20 +16,18 @@ export class FormularioSkillsComponent implements OnInit  {
 
   @Input() nombreModal:string= "";
   @Input() nombreBoton:string= "";
-  @Input() nombre:string= "";
   @Input() valorId:string= "";
   @Input() valorHabilidad:string="";
-  @Input() valorPorcentaje:number= 1;
+  @Input() valorPorcentaje:string= "";
   @Input() valorOtros:string= "";
-  @Input() funcionDelboton:string= "";
   @Output() onClick = new EventEmitter();
 
 
   skillsForm = new FormGroup({
     id: new FormControl (''),
-    habilidad: new FormControl('',[Validators.required]),
-    porcentaje: new FormControl(0,[Validators.required]),
-    otros: new FormControl('',)
+    habilidad: new FormControl('',[Validators.required, Validators.maxLength(100)]),
+    porcentaje: new FormControl('',[Validators.required, Validators.maxLength(100), Validators.min(1)]),
+    otros: new FormControl('',[Validators.maxLength(200)])
   });
 
   valoresInicialesSkills(){
@@ -50,9 +48,15 @@ export class FormularioSkillsComponent implements OnInit  {
     this.onClick.emit();
   };
 
-  crearSkill():void{};
+  crearSkill():void{
+    this.datosSkill.postSkill(this.skillsForm.value).subscribe(data =>{})
+    this.avisar(); 
+  };
 
-  modificarskill(id:any):void{};
+  modificarskill(id:any):void{
+    this.datosSkill.modificarSkillId(id,this.skillsForm.value).subscribe(data =>{
+      this.avisar();});
+    }
 
 
 

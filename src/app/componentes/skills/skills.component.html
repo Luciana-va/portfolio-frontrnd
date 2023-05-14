@@ -1,20 +1,44 @@
 
 <div class="row container row-cols-1 row-cols-md-3 g-4" >
-  <h1> SKILLS </h1>
+   <div id="titulo">
+      <h1> SKILLS  </h1> 
+     <app-formulario-skills
+      nombreModal="AGREGAR UNA HABILIDAD"
+       nombreBoton="AGREGAR"
+       valorId=""    
+      ></app-formulario-skills>
+      <button type="button" (click)="actualizarSkills()"class="btn btn-info">ACTUALIZAR</button>
+       <hr>
+   </div>
+   
+   
+
     
-  <div class="col" ><!--*ngFor="let skill of listaSkills"-->
-    
+  <div class="col" *ngFor="let skill of skills"><!--*ngFor="let skill of listaSkills"-->
+   
     <div class="card text-center">
 
-     <img [src]= "" class="card-img-top rounded mx-auto d-block">
-       
+            
       <div class="card-body">
         
-        <h5>HTML</h5>
+        <h5>{{skill.habilidad}}</h5>
 
         <div class="progress"  role="progressbar" aria-label="Default striped example" aria-valuemin="0" aria-valuemax="100">
-          <div class="progress-bar progress-bar-striped" style="width: 50%"></div>
-        </div>      
+          <div class="progress-bar progress-bar-striped" [attr.style]=" 'width: '+skill.porcentaje+'%' "></div>
+        </div> 
+        <div>{{skill.otros}}</div>
+        
+        <app-formulario-skills
+        nombreModal="MODIFICAR ESTA HABILIDAD"
+        nombreBoton="MODIFICAR"
+        valorId="{{skill.id}}"
+        valorHabilidad="{{skill.habilidad}}"
+        valorPorcentaje= "{{skill.porcentaje}}"
+        valorOtros="{{skill.otros}}"
+        (onClick)="actualizarSkills()"
+        
+        ></app-formulario-skills>
+        <button type="button" class="btn btn-dark" (click)="eliminarSkills(skill.id)">Eliminar</button>
 
       </div>
 
