@@ -23,6 +23,7 @@ import { DatosPersonalesService } from './servicios/datos-personales.service';
 import { LogService } from './servicios/log.service';
 import { RedesSocialesService } from './servicios/redes-sociales.service';
 import { FormularioSkillsComponent } from './componentes/formulario-skills/formulario-skills.component';
+import { FormularioProyectosComponent } from './componentes/formulario-proyectos/formulario-proyectos.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { FormularioSkillsComponent } from './componentes/formulario-skills/formu
     ModificarComponent,
     FormularioEducacionComponent,
     FormularioAcercadeComponent,
-    FormularioSkillsComponent
+    FormularioSkillsComponent,
+    FormularioProyectosComponent,
   ],
   imports: [
     BrowserModule,

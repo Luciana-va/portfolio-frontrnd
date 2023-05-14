@@ -10,20 +10,26 @@ import { RedesSocialesService } from 'src/app/servicios/redes-sociales.service';
   styleUrls: ['./cabecera.component.css']
 })
 export class CabeceraComponent implements OnInit {
-  usuario:any;
-  contrasena:any;
   
   redes:Redes[]=[];
 
-  constructor( private datosRedes:RedesSocialesService, private logINOut: LogService, private http: HttpClient
+  logIn:boolean = false;
+
+  constructor( private datosRedes:RedesSocialesService, private logInOut:LogService, private http: HttpClient
    
     ){}
+
+
+    actualizarRedes(){
+     this.datosRedes.getRedes().subscribe(data=>{this.redes=data});
+    }
   
     ngOnInit(){
 
-      this.datosRedes.getRedes().subscribe(data=>{this.redes=data});
+    this.actualizarRedes();    
 
-    
+    this.logInOut.log.subscribe
+    (log=>{this.logIn=log});
     };
 
 

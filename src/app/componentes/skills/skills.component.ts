@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Skills } from 'src/app/modelos/skillsModelo';
+import { LogService } from 'src/app/servicios/log.service';
 import { SkillsService } from 'src/app/servicios/skills.service';
 
 
@@ -12,7 +13,9 @@ export class SkillsComponent implements OnInit  {
   
   skills: Skills []=[];
 
-  constructor(private datosSkills:SkillsService){}
+  logIn:boolean = false;
+
+  constructor(private datosSkills:SkillsService, private LogInOut:LogService){}
 
   actualizarSkills(){
  
@@ -21,7 +24,10 @@ export class SkillsComponent implements OnInit  {
 
   ngOnInit():void{
    
-    this.actualizarSkills()
+    this.actualizarSkills();
+    
+    this.LogInOut.log.subscribe
+    (log=>{this.logIn=log});
     
   }
 

@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, EventEmitter, Output } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { Redes } from 'src/app/modelos/redesSocialesModelo';
@@ -21,6 +21,7 @@ export class ModificarComponent implements OnInit {
   @Input() linkFace: string = "";
   @Input() linkInsta: string = "";
   @Input() linklinke: string = "";
+  @Output() onClick = new EventEmitter();
 
 
 
@@ -41,9 +42,8 @@ onSubmit(value: any){
   console.log(this.redesSocialesForm.value);
 }
 
-ngOnInit(){
-
-  this.redesSocialesForm.setValue({
+valoresInicialesSkillsRedes(){
+    this.redesSocialesForm.setValue({
     id:"0",
     linkFacebook:this.linkFace,
     linkInstagram:this.linkInsta,
@@ -51,11 +51,20 @@ ngOnInit(){
   });
 }
 
+ngOnInit(){
+  
+  this.valoresInicialesSkillsRedes();
+};
+
 modificarRedes(id:any):void{
   this.datosRedes.modificarRedesId(id,this.redesSocialesForm.value).subscribe(data =>{
-    
+    this.avisar(); 
   });
-}
+};
+
+avisar(){
+  this.onClick.emit();
+};
 
 
 

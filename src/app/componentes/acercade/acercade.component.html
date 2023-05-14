@@ -1,14 +1,16 @@
 <div id="contenedor"></div>
    <div id="banner" style.background-image="url('{{datosPersonales[0].linkBanner}}')">
-      <!--style.background-image="url('{{miPortfolio.banner}}')"
-          Aquí va el banner, traigo el background-image del css y lo coloco con style dentro de la etiqueta div-->
+<!-- Aquí va el banner, traigo el background-image del css y lo coloco con style dentro de la etiqueta div-->
+
+          <div *ngIf="logIn">
           <app-formulario-acercade
             valorImgBanner="{{datosPersonales[0].linkBanner}}"
             valorName="{{datosPersonales[0].nombre}}"
             valorFotoPerfil="{{datosPersonales[0].linkFoto}}"
-            valorAcerca="{{datosPersonales[0].acerca}}">
+            valorAcerca="{{datosPersonales[0].acerca}}"
+            (onClick)="actualizarAcercade()">
           </app-formulario-acercade>
-      
+          </div>
    </div>
 
    <div class="container text-center">
@@ -19,7 +21,7 @@
              <img id="foto" [src]=datosPersonales[0].linkFoto alt="Foto de Perfil"> 
                <!-- miPortfolio.img acá se realizó un property binding -->
 
-             <h2>{{datosPersonales[0].nombre}}</h2> <!-- acá se realizó un data binding -->
+             <h1 id="miNombre">{{datosPersonales[0].nombre}}</h1> <!-- acá se realizó un data binding -->
             </div>
         </div>
 
@@ -30,12 +32,7 @@
                {{datosPersonales[0].acerca}}
             <!-- acá se realizó un data binding -->
             </p>
-   
-            <button 
-            (click)="showLog()"
-            *ngIf="logIn"
-            >log</button>
-          
+            
          
         </div>
     

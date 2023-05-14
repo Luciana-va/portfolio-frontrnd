@@ -13,5 +13,7 @@ body {
     background-attachment: fixed;
 }
 
+
+
 @import "~bootstrap-icons/font/bootstrap-icons.css"
 /* Esta importación junto con su respectivo paquete de npm son para poder utilizar los íconos que provee bootstrap */

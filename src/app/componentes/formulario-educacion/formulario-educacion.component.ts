@@ -2,7 +2,10 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { EducacionService } from 'src/app/servicios/educacion.service';
 import { Educacion } from 'src/app/modelos/educacionModelo';
+import { ExperienciaService } from 'src/app/servicios/experiencia.service';
+import { Experiencia } from 'src/app/modelos/experienciaModelo';
 
+// Este Formulario se utiliza para los componentes educacion y experiencia
 
 @Component({
   selector: 'app-formulario-educacion',
@@ -12,8 +15,9 @@ import { Educacion } from 'src/app/modelos/educacionModelo';
 export class FormularioEducacionComponent implements OnInit  {
 
   educacion: Educacion[]=[];
+  experiencia:Experiencia[]=[];
 
-  constructor(private datosEducacion:EducacionService ){}
+  constructor(private datosEducacion:EducacionService, private datosExperiencia:ExperienciaService ){}
   
   @Input() nombreModal:string= "";
   @Input() nombreBoton:string= "";
@@ -27,11 +31,7 @@ export class FormularioEducacionComponent implements OnInit  {
   @Input() valorAlternativo:string= "";
   @Input() funcionDelboton:string= "";
   @Output() onClick = new EventEmitter();
-
-
-  
-  
-  
+ 
 
       educYexpForm = new FormGroup({
        id: new FormControl (''),
@@ -76,28 +76,28 @@ export class FormularioEducacionComponent implements OnInit  {
  }
 
 
-
+    //Esta funcion es para modificar un item en educacion
   modificarEducacion(id:any):void{
     this.datosEducacion.modificarEducacionId(id,this.educYexpForm.value).subscribe(data =>{
       this.avisar();
       
     });
   }
-
-   
-  
-
-  
-    
-    oprimirbtnguardar(){
-      console.log("guardar");
+ 
+     //Esta funcion es para crear un nuevo item en experiencia   
+    crearExperiencia(){
+      this.datosExperiencia.postExperiencia(this.educYexpForm.value).subscribe(data =>{})
+      this.avisar();  
 
     }
 
-    oprimirbtncrear(){
-      console.log("guardar");
-
-    }
+    //Esta funcion es para modificar un item en experiencia
+  modificarExperiencia(id:any):void{
+    this.datosExperiencia.modificarExperienciaId(id,this.educYexpForm.value).subscribe(data =>{
+    this.avisar();
+        
+    });
+  }
 
 opretarBtn(event:Event):void{
   console.log("apretar btn desde el form");

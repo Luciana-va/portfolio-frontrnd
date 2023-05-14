@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Educacion } from 'src/app/modelos/educacionModelo';
 import { EducacionService } from 'src/app/servicios/educacion.service';
+import { LogService } from 'src/app/servicios/log.service';
 
 
 @Component({
@@ -12,7 +13,9 @@ export class EducacionComponent implements OnInit  {
   
   educacion: Educacion[]=[];
 
-  constructor(private datosEducacion:EducacionService ){}
+  logIn:boolean = false;
+
+  constructor(private datosEducacion:EducacionService, private LogInOut:LogService){}
    
   //esta funcion llama a base de datos
   actualizar(){
@@ -20,12 +23,12 @@ export class EducacionComponent implements OnInit  {
     this.datosEducacion.getEducacion().subscribe(data =>{this.educacion = data});
   }; 
 
-
   ngOnInit(){
     
-    this.actualizar()  
-      
+    this.actualizar();
     
+    this.LogInOut.log.subscribe
+    (log=>{this.logIn=log});
   }
   
 

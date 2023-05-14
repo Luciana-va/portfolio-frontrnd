@@ -3,7 +3,7 @@
 <div class="container text-center">
 
     <h1> EDUCACIÓN <br> FORMAL</h1> 
-    <div>
+    <div *ngIf="logIn">
     <app-formulario-educacion
               valorId=""
               nombreModal="CREAR EDUCACION"
@@ -17,43 +17,46 @@
   </div>
 
     
-    <div class="row align-items-start" *ngFor="let educacion of educacion">
+    <div class="row align-items-start" *ngFor="let educ of educacion">
       <!-- Con el *ngFor recorro los objetos de una lista-->
 
       <hr>
 
       <div class="col"> <!-- Con esta clase de bootstrap manejo el tamaño de las columnas -->
-        <img [src]=educacion.linkLogo [alt]=educacion.textoAlternativo>
-        <div>             
+        {{educ.institucion}}
+        <br>
+        <img [src]=educ.linkLogo [alt]=educ.textoAlternativo>
+        <div *ngIf="logIn">             
            <app-formulario-educacion 
-              valorId="{{educacion.id}}"
+              valorId="{{educ.id}}"
               nombreModal="MODIFICAR EDUCACION"
               nombreBoton="MODIFICAR"
               nombre="edu"
-              valorDescripcion="{{educacion.descripcion}}"
-              valorInstitucion="{{educacion.institucion}}"
-              valorLinkImagen="{{educacion.linkLogo }}"
-              valorAlternativo="{{educacion.textoAlternativo}}"
+              valorDescripcion="{{educ.descripcion}}"
+              valorInstitucion="{{educ.institucion}}"
+              valorInicio="{{educ.fechaInicio}}"
+              valorFinal="{{educ.fechaFinalizacion}}"
+              valorLinkImagen="{{educ.linkLogo }}"
+              valorAlternativo="{{educ.textoAlternativo}}"
              (onClick)="actualizar()"
               >
             </app-formulario-educacion>
             
-            <button type="button" class="btn btn-dark" (click)="eliminarEducacion(educacion.id)">Eliminar</button>
-</div>
+            <button type="button" class="btn btn-dark" (click)="eliminarEducacion(educ.id)">Eliminar</button>
+          </div>
 
     
         
       </div>
       
       <div class="col">
-       {{educacion.descripcion}}     
+       {{educ.descripcion}}     
       </div>
 
       <div class="col">
-        {{educacion.fechaInicio}}
+        {{educ.fechaInicio}} 
         <br>
-        {{educacion.institucion}}
-        {{educacion.id}}
+        {{educ.fechaFinalizacion}} 
       </div>
 
 

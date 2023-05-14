@@ -16,10 +16,11 @@
 
 <div id="logoRedes">
     <!-- En el componente modificar se encuentra el formulario para modificar los link de las redes sociales -->
-   <app-modificar
+   <app-modificar *ngIf="logIn"
    linkFace="{{redes[0].linkFacebook}}"
    linkInsta="{{redes[0].linkInstagram}}"
    linklinke="{{redes[0].linkLinkelin}}"
+   (onClick)="actualizarRedes()"
    ></app-modificar>
 
      <a href= {{redes[0].linkFacebook}} target="_blank">

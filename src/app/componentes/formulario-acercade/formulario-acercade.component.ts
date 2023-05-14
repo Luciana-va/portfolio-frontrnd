@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { DatosPersonales } from 'src/app/modelos/datosPersonalesModelo';
 import { DatosPersonalesService } from 'src/app/servicios/datos-personales.service';
@@ -18,6 +18,7 @@ export class FormularioAcercadeComponent implements OnInit{
   @Input() valorName:string= "";
   @Input() valorFotoPerfil:string= "";
   @Input() valorAcerca:string= "";
+  @Output() onClick = new EventEmitter();
   
  
 
@@ -30,20 +31,28 @@ export class FormularioAcercadeComponent implements OnInit{
   });
   
 
-  
-  ngOnInit() {
-    this.acercadeForm.setValue({
+ valoresInicialesACercade(){
+  this.acercadeForm.setValue({
       id:"0",
       nombre:this.valorName,
       linkBanner:this.valorImgBanner,
       linkFoto:this.valorFotoPerfil,    
       acerca:this.valorAcerca,
     })
+ }
+
+  ngOnInit() {
+    
+    this.valoresInicialesACercade();
   }
+
+  avisar(){
+    this.onClick.emit();
+  };
 
   modificarUsuario(id:any):void{
     this.datosPersonalesService.modificarUsuarioId(id,this.acercadeForm.value).subscribe(data =>{
-      
+      this.avisar();
     });
   }
 

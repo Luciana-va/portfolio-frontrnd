@@ -26,7 +26,7 @@ export class FormularioSkillsComponent implements OnInit  {
   skillsForm = new FormGroup({
     id: new FormControl (''),
     habilidad: new FormControl('',[Validators.required, Validators.maxLength(100)]),
-    porcentaje: new FormControl('',[Validators.required, Validators.maxLength(100), Validators.min(1)]),
+    porcentaje: new FormControl('',[Validators.required, Validators.max(100), Validators.min(1)]),
     otros: new FormControl('',[Validators.maxLength(200)])
   });
 

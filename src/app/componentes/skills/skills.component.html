@@ -1,20 +1,24 @@
 
 <div class="row container row-cols-1 row-cols-md-3 g-4" >
-   <div id="titulo">
+   <div class="titulo">
       <h1> SKILLS  </h1> 
+
+      <div *ngIf="logIn">
      <app-formulario-skills
       nombreModal="AGREGAR UNA HABILIDAD"
        nombreBoton="AGREGAR"
        valorId=""    
       ></app-formulario-skills>
       <button type="button" (click)="actualizarSkills()"class="btn btn-info">ACTUALIZAR</button>
+      </div>
+
        <hr>
    </div>
    
    
 
     
-  <div class="col" *ngFor="let skill of skills"><!--*ngFor="let skill of listaSkills"-->
+  <div class="col" *ngFor="let skill of skills">
    
     <div class="card text-center">
 
@@ -28,6 +32,7 @@
         </div> 
         <div>{{skill.otros}}</div>
         
+        <div *ngIf="logIn">
         <app-formulario-skills
         nombreModal="MODIFICAR ESTA HABILIDAD"
         nombreBoton="MODIFICAR"
@@ -39,7 +44,7 @@
         
         ></app-formulario-skills>
         <button type="button" class="btn btn-dark" (click)="eliminarSkills(skill.id)">Eliminar</button>
-
+         </div>
       </div>
 
     </div>

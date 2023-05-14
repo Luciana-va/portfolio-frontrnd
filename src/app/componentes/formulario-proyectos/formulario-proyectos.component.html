@@ -1,0 +1,60 @@
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" [attr.data-bs-target]="'#form'+valorId+'proy'" >
+    {{nombreBoton}}
+  </button>
+
+  <div class="modal fade" [attr.id]="'form'+valorId+'proy'" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title fs-5" id="exampleModalLabel">{{nombreModal}}</h2>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+          
+     
+            <form [formGroup]="proyectosForm">
+
+                <div>
+                <label for="titulo">  TITULO </label>
+                <input id="titulo" type="text" formControlName="titulo"></div>
+
+                <div>
+                <label for="descripcion">  DESCRIPCION </label>
+                <input id="descripcion" type="text" formControlName="descripcion"></div>
+
+                <div>
+                <label for="linkImagen">  LINK DE IMAGEN </label>
+                 <input id="linkImagen" type="text" formControlName="linkImagen"></div>
+                
+                <div>
+                <label for="otros">¿DESEA AGRGAR ALGO MAS? </label>
+                <input id="otros" type="text" formControlName="otros" placeholder="Si corresponde"></div>
+    
+
+                    
+                <button *ngIf="valorId!=''"
+                type="submit" class="btn btn-primary" (click)="modificarProyecto(valorId)" [disabled]="!proyectosForm.valid" data-bs-dismiss="modal">GUARDAR MODIFICACION</button>
+
+
+
+                <button *ngIf="valorId ===''"
+                type="submit" class="btn btn-primary" (click)="crearProyecto()" [disabled]="!proyectosForm.valid" data-bs-dismiss="modal">CREAR</button>
+              
+              </form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </div>
+
+      </div>
+    </div>

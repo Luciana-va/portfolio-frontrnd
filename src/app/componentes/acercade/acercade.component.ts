@@ -26,9 +26,13 @@ export class AcercadeComponent implements OnInit  {
     console.log(this.logIn);
   }
 
+  actualizarAcercade(){
+   this.datosDatosPersonales.getDatosPersonales().subscribe(data =>{this.datosPersonales = data}); 
+  };
+
   ngOnInit():void{
     
-  this.datosDatosPersonales.getDatosPersonales().subscribe(data =>{this.datosPersonales = data});
+    this.actualizarAcercade();
 
 
     this.LogInOut.log.subscribe
