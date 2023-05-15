@@ -16,7 +16,7 @@ export class DatosPersonalesService {
   datosPersonales: DatosPersonales[]=[];
 
 
-  public getDatosPersonales(){
+  public getDatosPersonales(){ 
     return this.http.get<DatosPersonales[]>(this.apiUrl);
   }
 
