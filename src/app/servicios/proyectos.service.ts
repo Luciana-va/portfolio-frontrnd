@@ -10,7 +10,10 @@ export class ProyectosService {
 
   constructor(private http:HttpClient) { }
 
-  apiUrl = 'http://localhost:8080/api/proyectos'
+  // apiUrl = 'http://localhost:8080/api/proyectos';
+  apiUrl = 'https://portfolio-backend-ncwm.onrender.com/api/proyectos';
+
+  
 
   proyectos: Proyectos[] = [];
 

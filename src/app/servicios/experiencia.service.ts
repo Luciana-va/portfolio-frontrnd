@@ -10,7 +10,8 @@ export class ExperienciaService {
 
   constructor(private http:HttpClient) {  }
 
-  apiUrl = 'http://localhost:8080/api/experiencia';
+  // apiUrl = 'http://localhost:8080/api/experiencia';
+  apiUrl = 'https://portfolio-backend-ncwm.onrender.com/api/experiencia';
 
   experiencia: Experiencia[]=[];
 
