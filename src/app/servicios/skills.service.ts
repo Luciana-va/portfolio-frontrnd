@@ -10,7 +10,8 @@ export class SkillsService {
 
   constructor(private http:HttpClient) { }
 
-  apiUrl = 'http://localhost:8080/api/skills';
+  // apiUrl = 'http://localhost:8080/api/skills';
+  apiUrl = 'https://portfolio-backend-ncwm.onrender.com/api/skills';
 
   skills:Skills[]=[];
 

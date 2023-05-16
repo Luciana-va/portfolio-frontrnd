@@ -12,7 +12,10 @@ export class RedesSocialesService {
   redes: Redes[]= [];
 
   constructor(private http:HttpClient) { }
-apiUrl = 'http://localhost:8080/api/RedesSociales'
+// apiUrl = 'http://localhost:8080/api/RedesSociales';
+apiUrl = 'https://portfolio-backend-ncwm.onrender.com/api/RedesSociales';
+
+
   public getRedes(){
     return this.http.get<Redes[]>(this.apiUrl);
   }

@@ -10,7 +10,8 @@ export class EducacionService {
 
   constructor(private http:HttpClient) { }
   
-  apiUrl = 'http://localhost:8080/api/educacion';
+  // apiUrl = 'http://localhost:8080/api/educacion';
+  apiUrl = 'https://portfolio-backend-ncwm.onrender.com/api/educacion';
 
   educacion: Educacion[] =[]
 
