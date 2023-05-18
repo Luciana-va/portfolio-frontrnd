@@ -53,7 +53,6 @@
                 <button *ngIf="nombre==='edu'&& valorId!=''"
                 type="submit" class="btn btn-primary" (click)="modificarEducacion(valorId)" [disabled]="!educYexpForm.valid" data-bs-dismiss="modal">GUARDAR MODIFICACION</button>
 
-                <button type="button" (click)="avisar()">boton</button>
 
                 <!-- Boton para confirmar la creacion de educacion -->
                 <button *ngIf="nombre==='edu'&& valorId ===''"

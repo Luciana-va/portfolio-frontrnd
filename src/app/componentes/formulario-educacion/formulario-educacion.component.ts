@@ -72,6 +72,7 @@ export class FormularioEducacionComponent implements OnInit  {
  crearEducacion():void{
   this.datosEducacion.postEducacion(this.educYexpForm.value).subscribe(data =>{})
   this.avisar();  
+  this.educYexpForm.reset;
         
  }
 
