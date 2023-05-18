@@ -56,6 +56,7 @@ export class FormularioProyectosComponent implements OnInit{
   crearProyecto():void{
     this.datosProyecto.postProyecto(this.proyectosForm.value).subscribe(data =>{})
     this.avisar(); 
+    this.proyectosForm.reset;
   };
 
   modificarProyecto(id:any):void{

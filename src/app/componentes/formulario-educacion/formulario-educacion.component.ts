@@ -71,7 +71,8 @@ export class FormularioEducacionComponent implements OnInit  {
     //Esta funcion es para crear un nuevo item en educacion
  crearEducacion():void{
   this.datosEducacion.postEducacion(this.educYexpForm.value).subscribe(data =>{})
-  this.avisar();  
+  this.avisar(); 
+  this.educYexpForm.reset; 
         
  }
 

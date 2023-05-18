@@ -51,6 +51,7 @@ export class FormularioSkillsComponent implements OnInit  {
   crearSkill():void{
     this.datosSkill.postSkill(this.skillsForm.value).subscribe(data =>{})
     this.avisar(); 
+    this.skillsForm.reset;
   };
 
   modificarskill(id:any):void{
